@@ -14,18 +14,13 @@
 
 <body>
   <nav class="navbar navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">Note Taker
+    <a class="navbar-brand" href="/notes">Note Taker
     </a>
-    
     <div class="icons">
-      <!-- added button  -->
-      <button class="btn" type="submit"><i class="fa fa-save text-dark save-note"></i></button>
-      <button class="btn" type="submit"><i class="fa fa-pen text-dark new-note"></i></button>
-     </div>
-  
-  </nav> 
-  <!-- added form -->
-  <form action="/api/notes" method="post">
+      <i class="fas fa-save text-light save-note"></i>
+      <i class="fas fa-pen text-light new-note"></i>
+    </div>
+  </nav>
   <div class="container-fluid">
     <div class="row">
       <div class="col-4 list-container">
@@ -35,12 +30,11 @@
         </div>
       </div>
       <div class="col-8">
-        <input class="note-title" name="noteTitle" placeholder="Note Title" maxlength="28" type="text">
-        <textarea class="note-textarea" name="noteTextArea" placeholder="Note Text"></textarea>
+        <input class="note-title" placeholder="Note Title" maxlength="28" type="text">
+        <textarea class="note-textarea" placeholder="Note Text"></textarea>
       </div>
     </div>
   </div>
-</form>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="/assets/js/index.js"></script>
 </body>
