@@ -115,8 +115,8 @@ const renderNoteList = function(notes) {
     const note = notes[i];
     console.log("single note", note)
     const $li = $("<li class='list-group-item'>").data(note);
-    const $span = $("<span>").text(note.note_title);//changed for it to work with mySQL
-    const $noteTexts = $("<p>").text(note.note_text);
+    const $span = $("<span class='font-weight-bold'>").text(note.note_title);//changed for it to work with mySQL
+    const $noteTexts = $("<p style= 'font-style: italic'>").text(note.note_text);
     const $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
     );
