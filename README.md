@@ -15,18 +15,8 @@ ii). Click save icon and refresh screen. The new note will appear in the sidebar
 
 iii). Click wastebin icon and refresh screen to delete a note. 
 
-Video:
-
-
-
-
-Images: 
-
-
-
-Finished view:
-
-Mobile view: Mobile view
+Demo:
+![Note writer demo clip](demo/demo.gif)
 
 Installation:
 package.json 
