@@ -16,7 +16,7 @@ ii). Click save icon and refresh screen. The new note will appear in the sidebar
 iii). Click wastebin icon and refresh screen to delete a note. 
 
 Demo:
-![Note writer demo clip](demo/demo.gif)
+![Note writer demo clip](https://github.com/Dee1985/NoteWriter-express/blob/master/img/vid_clip.gif)
 
 Installation:
 package.json 
