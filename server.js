@@ -24,7 +24,7 @@
   });
   
   app.post("/notes", function(req, res){
-    console.log("hellooo post request") // postman will throw error and not show text, but console log will show in terminal      
+    console.log("hellooo post request")      
   });
 
   // start of api requests ====================================================================================================
@@ -39,6 +39,7 @@
     DELETE /api/notes/:id - Should recieve a query paramter containing the id of a note to delete. 
     I did not send data to a JSON file, I used mySQL/MAMP instead
   */
+  // https://www.guru99.com/delete-and-update.html
   app.delete("/api/notes/:id", function(req, res) {
     connection.query("DELETE FROM `notes` WHERE `id` = "+req.params.id);   
   });
