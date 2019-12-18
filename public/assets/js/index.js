@@ -10,7 +10,7 @@ const activeNote = {};
 // A function for getting all notes from the db
 const getNotes = function() {
   return $.ajax({
-    url: "/notes",
+    url: "/api/notes",
     method: "GET"
   });
 };
@@ -18,7 +18,7 @@ const getNotes = function() {
 // A function for saving a note to the db
 const saveNote = function(note) {
   return $.ajax({
-    url: "/notes",
+    url: "/api/notes",
     data: note,
     method: "POST"
   });
@@ -27,7 +27,7 @@ const saveNote = function(note) {
 // A function for deleting a note from the db
 const deleteNote = function(id) {
   return $.ajax({
-    url: "/notes" + id,
+    url: "api/notes/" + id,
     method: "DELETE"
   });
 };
@@ -87,7 +87,7 @@ const handleNoteView = function() {
   renderActiveNote();
 };
 
-// Sets the activeNote to and empty object and allows the user to enter a new note
+// Sets the activeNote to an empty object and allows the user to enter a new note
 const handleNewNoteView = function() {
   activeNote = {};
   renderActiveNote();
@@ -109,11 +109,11 @@ const renderNoteList = function(notes) {
 
   const noteListItems = [];
 
-  for (const i = 0; i < notes.length; i++) {
+  for (let i = 0; i < notes.length; i++) {
     const note = notes[i];
-
+    console.log("single note", note)
     const $li = $("<li class='list-group-item'>").data(note);
-    const $span = $("<span>").text(note.title);
+    const $span = $("<span>").text(note.note_title);
     const $delBtn = $(
       "<i class='fas fa-trash-alt float-right text-danger delete-note'>"
     );
@@ -121,13 +121,15 @@ const renderNoteList = function(notes) {
     $li.append($span, $delBtn);
     noteListItems.push($li);
   }
-
+  console.log("note list items", noteListItems)
   $noteList.append(noteListItems);
 };
 
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = function() {
+  console.log("about to get notes")
   return getNotes().then(function(data) {
+    console.log(data)
     renderNoteList(data);
   });
 };
