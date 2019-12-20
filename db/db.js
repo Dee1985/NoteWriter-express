@@ -1,7 +1,7 @@
 const mysql = require("mysql");
 
 const connection = mysql.createConnection({
-  host: "localhost",
+  host: process.env.JAWSDB_URL || "localhost",
 
   // Your port
   port: 3306,
